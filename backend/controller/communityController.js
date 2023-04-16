@@ -48,4 +48,19 @@ exports.updateLikes = BigPromise(async (req, res, next) => {
   });
 });
 
+exports.getAllcommunityPost = BigPromise(async (req, res, next) => {
+  const communityPosts = await Community.find();
 
+  if (!communityPosts) {
+    return res.status(500).json({
+      status: 500,
+      message: "Internal error, no post fetched",
+    });
+  }
+
+  return res.status(200).json({
+    status: 200,
+    message: "All community posts fetched",
+    communityPosts,
+  });
+});
