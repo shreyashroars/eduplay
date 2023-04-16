@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:zenith/pages/bodypage.dart';
+import 'package:eduplay/pages/bodypage.dart';
 
 import 'maths_lesson.dart';
 
