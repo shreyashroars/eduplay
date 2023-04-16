@@ -85,4 +85,38 @@ exports.getCurrentTag = (currentTime) => {
   }
 };
 
+exports.findEndTime = (startTime, duration) => {
+  let hrs = parseInt(startTime / 100);
+  let mins = startTime % 100;
+
+  let getDecimalVal = duration.toString().indexOf(".");
+  let decimalPart = 0;
+  let hrsPart = 0;
+
+  if (getDecimalVal !== -1) {
+    decimalPart = parseInt(
+      duration.toString().substring(getDecimalVal + 1, getDecimalVal + 3)
+    );
+    hrsPart = parseInt(duration.toString().substring(0, getDecimalVal));
+  } else {
+    hrsPart = duration;
+  }
+
+  if (decimalPart < 10) decimalPart *= 10;
+
+  // if(getDecimalVal !== -1)
+
+  let minsToadd = hrsPart * 60 + parseInt((decimalPart * 6) / 10);
+
+  mins += minsToadd;
+
+  hrsToadd = parseInt(mins / 60);
+
+  mins = mins % 60;
+  hrs += hrsToadd;
+
+  let endTime = hrs * 100 + mins;
+
+  return endTime;
+};
 
