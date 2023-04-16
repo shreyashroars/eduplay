@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:zenith/games/game_screen.dart';
-import 'package:zenith/globalvariables.dart';
-import 'package:zenith/musicpage/music.dart';
-import 'package:zenith/musicpage/music_screen.dart';
-import 'package:zenith/pages/community_page.dart';
-import 'package:zenith/pages/form_page.dart';
-import 'package:zenith/pages/homepage.dart';
+import 'package:eduplay/games/game_screen.dart';
+import 'package:eduplay/globalvariables.dart';
+import 'package:eduplay/musicpage/music.dart';
+import 'package:eduplay/musicpage/music_screen.dart';
+import 'package:eduplay/pages/community_page.dart';
+import 'package:eduplay/pages/form_page.dart';
+import 'package:eduplay/pages/homepage.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:zenith/pages/leaderboard.dart';
-import 'package:zenith/pages/profilePage.dart';
-import 'package:zenith/pages/retentionpage.dart';
-import 'package:zenith/yoga/yoga_home.dart';
+import 'package:eduplay/pages/leaderboard.dart';
+import 'package:eduplay/pages/profilePage.dart';
+import 'package:eduplay/pages/retentionpage.dart';
+import 'package:eduplay/yoga/yoga_home.dart';
 
 class body_page extends StatefulWidget {
   const body_page({super.key});
