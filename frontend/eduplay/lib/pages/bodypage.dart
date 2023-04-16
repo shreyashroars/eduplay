@@ -22,7 +22,13 @@ class body_page extends StatefulWidget {
 class _body_pageState extends State<body_page> {
   int _selectedPage = 0;
 
-  final _pageOptions = [];
+  final _pageOptions = [
+    leaderboard(),
+    const Community(),
+    HomePage(),
+    AddForm(),
+    retention(),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
