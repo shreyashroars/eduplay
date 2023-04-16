@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zenith/models/user_modal.dart';
+import 'package:eduplay/models/user_modal.dart';
 
 class UserProvider extends ChangeNotifier {
   User _user = User(

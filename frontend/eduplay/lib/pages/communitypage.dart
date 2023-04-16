@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:zenith/globalvariables.dart';
-import 'package:zenith/onBoarding/model/communitymodel.dart';
-import 'package:zenith/pages/share_page.dart';
-import 'package:zenith/utils/getcommunity.dart';
-import 'package:zenith/utils/postTile.dart';
+import 'package:eduplay/globalvariables.dart';
+import 'package:eduplay/onBoarding/model/communitymodel.dart';
+import 'package:eduplay/pages/share_page.dart';
+import 'package:eduplay/utils/getcommunity.dart';
+import 'package:eduplay/utils/postTile.dart';
 
 class Community extends StatefulWidget {
   const Community({super.key});
@@ -17,6 +17,23 @@ class Community extends StatefulWidget {
 }
 
 class _CommunityState extends State<Community> {
+  List<CommunityPostModal> posts = [];
+  bool _loading = true;
+  @override
+  void initState() {
+    super.initState;
+    getData();
+  }
+
+  Future<void> getData() async {
+    GetCommunity sc = GetCommunity();
+    await sc.getData();
+    posts = sc.posts;
+    setState(() {
+      _loading = false;
+    });
+  }
+
   List<File> images = [];
   @override
   Widget build(BuildContext context) {
