@@ -8,7 +8,8 @@ const taskSchema = mongoose.Schema({
     required: true,
     unique: true,
     default: shortid.generate,
-  },
+    },
+
   title: {
     type: String,
     require: ["true", "Provide the task title"],
