@@ -1,5 +1,16 @@
 const User = require("../modals/user_modal");
 const BigPromise = require("../middleware/bigPromise");
+const jwt = require("jsonwebtoken");
+
+exports.getAllUser = BigPromise(async (req, res, next) => {
+  let users = await User.find();
+
+  return res.status(200).json({
+    status: 200,
+    message: "retrieved successfully",
+    users,
+  });
+});
 
 exports.searchUser = BigPromise(async (req, res, next) => {
   let { email } = req.body;
